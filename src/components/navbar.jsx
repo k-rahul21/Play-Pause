@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
+import * as BsIcons from "react-icons/bs";
 import { SidebarData } from "./sidebarData";
 import "./navbar.css";
 import { IconContext } from "react-icons";
@@ -13,11 +14,17 @@ const Navbar = () => {
   };
   return (
     <>
-      <IconContext.Provider value={{ color: "#fff" }}>
+      <IconContext.Provider value={{ color: "#222222" }}>
         <div className="navbar">
           <Link to="#" className="menu-bars">
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
+          <div className="brand-name">
+            <div className="brand-logo">
+              <BsIcons.BsCollectionPlayFill />
+            </div>
+            <span className="brand-text">PlayPause</span>
+          </div>
         </div>
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-menu-items" onClick={showSidebar}>
